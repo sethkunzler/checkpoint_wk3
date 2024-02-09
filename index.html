@@ -16,14 +16,25 @@
 </head>
 
 <body class="bg-purple-dark">
-  <header class="d-flex justify-content-between p-4">
+  <header class="d-flex justify-content-between align-items-center p-4">
     <!-- TODO onclick shows offcanvas menu -->
-    <img src="assets/img/JotLogo.png" alt="This is the JOT logo" class="img-logo selectable ms-4 p-3">
+    <img src="assets/img/JotLogo.png" alt="This is the JOT logo" class="img-logo selectable ms-4 p-3" role="button">
     <!-- TODO make into offcanvas menu -->
     <!-- NOTE this is where my list of notes will go -->
-    <div id="notesList" class=""></div>
+    <div id="notesList" class="d-flex gray-light justify-content-around px-5">
+      <p onclick="setActiveNote()" class="selectable rounded p-2" role="button">Note1</p>
+      <p onclick="setActiveNote()" class="selectable rounded p-2" role="button">Note2</p>
+      <p onclick="setActiveNote()" class="selectable rounded p-2" role="button">Note3</p>
+    </div>
+    <form onsubmit="createNewNote()" action="" class="d-flex">
+      <div class="form-floating">
+        <input type="text" class="form-control" name="name" id="noteName" required minlength="3" maxlength="15" placeholder="Title">
+        <label class="purple-dark" for="noteName">Add a Jot</label>
+      </div>
+      <button type="Submit" class="btn btn-dark bg-gray-dark gray-light shadow px-3 m-2">+add jot</button>
+    </form>
     <!-- TODO add an Icon to the button -->
-    <button type="button" class="btn bg-gray-light btn-outline-dark">Add Notebook</button>
+    <button type="button" class="btn bg-gray-light btn-outline-dark">add Jot</button>
   </header>
 
   <main class="d-flex w-100 justify-content-center">

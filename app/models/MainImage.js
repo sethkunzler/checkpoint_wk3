@@ -1,7 +1,12 @@
 export class MainImage {
+  constructor(data) {
+    this.source = data.source
+    this.alt = data.alt
+    this.title = data.title
+  }
   get mainImageTemplate() {
     return /*html*/ `
-    <img class="img-main-typewritter" src="assets/img/typewritter_unDraw.svg" alt="typewritter - a space to jot down notes" title="You have not selected a note yet.">
+    <img class="img-main-typewritter" src="${this.source}" alt="${this.alt}" title="${this.title}">
     `
   }
 }
