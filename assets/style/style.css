@@ -67,6 +67,19 @@
 /* basic styles go here */
 
 .img-logo {
-  max-width: 32px;
-  max-height: 32px;
+  
+  width: 128px;
+}
+
+.img-main-typewritter {
+  position: center;
+}
+
+@media screen AND (max-width: 768px) {
+  .img-logo {
+    max-width: 25vw;
+  }
+  .img-main-typewritter {
+    max-width: 100vw;
+  }
 }

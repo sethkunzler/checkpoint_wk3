@@ -18,7 +18,7 @@
 <body class="bg-purple-dark">
   <header class="d-flex justify-content-between p-4">
     <!-- TODO onclick shows offcanvas menu -->
-    <img src="assets/img/logo.png" alt="This is the JOT logo" class="img-logo selectable ms-4">
+    <img src="assets/img/JotLogo.png" alt="This is the JOT logo" class="img-logo selectable ms-4 p-3">
     <!-- TODO make into offcanvas menu -->
     <!-- NOTE this is where my list of notes will go -->
     <div id="notesList" class=""></div>
@@ -26,17 +26,36 @@
     <button type="button" class="btn bg-gray-light btn-outline-dark">Add Notebook</button>
   </header>
 
-  <main>
-
-    <section id="router-view">
-      <!-- primary viewport -->
-    </section>
-
+  <main class="d-flex w-100 justify-content-center">
+    <!-- TODO img needs to disappear if I have selected a JOT -->
+    <img class="img-main-typewritter" src="assets/img/typewritter_unDraw.svg" alt="typewritter - a space to jot down notes" title="You have not selected a note yet.">
+    <div class="bg-purple-light gray-light rounded shadow m-3">
+      <div id="" class="">
+      <section class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between p-4">
+            <h1>Title: Name <span class=""></span></h1>
+            <button type="button" class="btn btn-danger shadow">Delete</button>
+          </div>  
+          <div class="col-4 p-4">
+            <p>Created at: full date, full time</p>
+            <p>Updated at: full date, full time</p>
+            <p>Words: 0; Characters: 0</p>
+          </div>
+          <div class="col-md-8">
+            <textarea class="m-4 p-3 bg-gray-light rounded shadow" name="body" id="noteInformation" cols="50" rows="15"></textarea> 
+          </div>
+              
+            </div>
+          
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks, Seth Kunzler</small></p>
+      <p class="mb-0"><small>Made with 💖 by Seth Kunzler @CodeWorks</small></p>
     </div>
   </footer>
 
