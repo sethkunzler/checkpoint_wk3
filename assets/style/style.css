@@ -65,3 +65,8 @@
 /* #endregion */
 
 /* basic styles go here */
+
+.img-logo {
+  max-width: 32px;
+  max-height: 32px;
+}
