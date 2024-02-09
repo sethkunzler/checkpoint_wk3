@@ -1,1 +1,67 @@
+/* My root variables */
+:root {
+  --purple-dark: #22223B;
+  --purple-light: #36364C;
+  --gray-dark: #9A8C98;
+  --gray-light: #F2E9E4;
+  --orange-dark: #CC6254;
+  --orange-light: #FFAA04;
+  --pink: #FF42CA;
+  --yellow: #FFF504;
+}
+
 /* BASIC STYLES HERE */
+
+/* thematic color styling goes in here */
+/* #region color styling */
+.purple-dark {
+  color: var(--purple-dark)
+}
+.purple-light {
+  color: var(--purple-light)
+}
+.gray-dark {
+  color: var(--gray-dark)
+}
+.gray-light {
+  color: var(--gray-light)
+}
+.orange-dark {
+  color: var(--orange-dark)
+}
+.orange-light {
+  color: var(--orange-light)
+}
+.pink {
+  color: var(--pink)
+}
+.yellow {
+  color: var(--yellow)
+}
+.bg-purple-dark {
+  background-color: var(--purple-dark)
+}
+.bg-purple-light {
+  background-color: var(--purple-light)
+}
+.bg-gray-dark {
+  background-color: var(--gray-dark)
+}
+.bg-gray-light {
+  background-color: var(--gray-light)
+}
+.bg-orange-dark {
+  background-color: var(--orange-dark)
+}
+.bg-orange-light {
+  background-color: var(--orange-light)
+}
+.bg-pink {
+  background-color: var(--pink)
+}
+.bg-yellow {
+  background-color: var(--yellow)
+}
+/* #endregion */
+
+/* basic styles go here */
