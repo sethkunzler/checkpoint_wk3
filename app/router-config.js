@@ -1,10 +1,11 @@
+import { NotesController } from "./controllers/NotesController.js";
 import { Router } from "./utils/Router.js";
 
 
 export const router = new Router([
   {
     path: '',
-    controllers: [],
+    controllers: [NotesController],
     view: /*html*/``
   }
   // {
