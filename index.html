@@ -27,7 +27,7 @@
       <p onclick="setActiveNote()" class="selectable rounded p-2" role="button">Note2</p>
       <p onclick="setActiveNote()" class="selectable rounded p-2" role="button">Note3</p> -->
     </div>
-    <form onsubmit="createNewNote()" action="" class="d-flex">
+    <form onsubmit="app.NotesController.createNewNote()" action="" class="d-flex">
       <div class="form-floating">
         <input type="text" class="form-control" name="name" id="noteName" required minlength="3" maxlength="15" placeholder="Title" autocomplete="off">
         <label class="purple-dark" for="noteName">Add a Jot</label>

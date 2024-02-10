@@ -6,7 +6,9 @@ export class Note {
     this.id = generateId()
     this.name = data.name
     this.color = data.color || generateColor()
+    // TODO timeCreated and timeUpdated need to be formated on page correctly
     this.timeCreated = data.timeCreated == undefined ? new Date() : new Date(data.timeCreated)
+    // FIXME Time Updated is not correct
     this.timeUpdated = data.timeUpdated ? new Date(data.timeUpdated) : new DataTransfer()
     this.body = data.body || ''
   }
@@ -22,7 +24,7 @@ get ActiveNoteHTMLTemplate() {
   <section class="container">
           <div class="row">
             <div class="col-12 d-flex justify-content-between p-4">
-              <h1>Title: ${this.name} <span class="${this.color}"></span></h1>
+              <h1>Title:<span class="${this.color}"> ${this.name} </span></h1>
               <button type="button" class="btn btn-danger shadow px-3">x</button>
             </div>  
             <div class="col-4 p-4">

@@ -1,9 +1,10 @@
 import { AppState } from "../AppState.js"
 import { notesService } from "../services/NotesService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawNotesList() {
-  console.log('draw notes list function called')
+  // console.log('draw notes list function called') // works!
   
   const notesList = AppState.notes
   let htmlString = ''
@@ -14,7 +15,7 @@ function _drawNotesList() {
 }
 
 function _drawActiveNote() {
-  console.log("draw active note function called")
+  // console.log("draw active note function called") // works!
   
   const activeNote = AppState.activeNote
   
@@ -24,7 +25,7 @@ function _drawActiveNote() {
 
 export class NotesController {
   constructor() {
-    // console.log('drawing Notes Controller')
+    // console.log('drawing Notes Controller') // works!
     _drawNotesList()
 
     // event listeners
@@ -33,8 +34,16 @@ export class NotesController {
   }
 
   setActiveNote(noteId) {
-    console.log('setting active note')
+    // console.log('setting active note') // works!
     notesService.setActiveNote(noteId)
+  }
+
+  createNewNote(data) {
+    event.preventDefault()
+    console.log('creating a new note')
+    const form = event.target
+    const noteFormData = getFormData(form)
+    notesService.createNewNote(noteFormData)
   }
 
 
