@@ -13,7 +13,7 @@ export class Note {
   
   get NoteListHTMLTemplate() {
     return /*html*/ `
-  <p id="${this.id}" onclick="setActiveNote()" class="selectable rounded p-2" role="button">${this.name}</p>
+  <p id="${this.id}" onclick="app.NotesController.setActiveNote('${this.id}')" class="selectable rounded p-2" role="button">${this.name}</p>
   `
 }
 

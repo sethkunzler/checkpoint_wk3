@@ -16,7 +16,7 @@
 </head>
 
 <body class="bg-purple-dark">
-  <header class="d-flex justify-content-between align-items-center p-4">
+  <header class="d-flex justify-content-between align-items-center shadow p-4">
     <!-- TODO onclick shows offcanvas menu -->
     <img src="assets/img/JotLogo.png" alt="This is the JOT logo" class="img-logo selectable ms-4 p-3" role="button">
     <!-- TODO make into offcanvas menu -->
@@ -29,7 +29,7 @@
     </div>
     <form onsubmit="createNewNote()" action="" class="d-flex">
       <div class="form-floating">
-        <input type="text" class="form-control" name="name" id="noteName" required minlength="3" maxlength="15" placeholder="title" autocomplete="off">
+        <input type="text" class="form-control" name="name" id="noteName" required minlength="3" maxlength="15" placeholder="Title" autocomplete="off">
         <label class="purple-dark" for="noteName">Add a Jot</label>
       </div>
       <button type="Submit" class="btn btn-dark bg-gray-dark gray-light shadow px-3 m-2">+add jot</button>
@@ -41,7 +41,7 @@
   <main class="d-flex w-100 justify-content-center">
     <!-- TODO img needs to disappear if I have selected a JOT -->
     <div class="bg-purple-light gray-light rounded shadow m-3">
-      <div id="" class="">
+      <div id="activeNote" class="">
         <!-- STUB this section has been stubbed into a model // draws either an img or this Active Note -->
         <!-- <section class="container">
           <div class="row">
