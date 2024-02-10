@@ -8,8 +8,7 @@ export class Note {
     this.color = data.color || generateColor()
     // TODO timeCreated and timeUpdated need to be formated on page correctly
     this.timeCreated = data.timeCreated == undefined ? new Date() : new Date(data.timeCreated)
-    // FIXME Time Updated is not correct
-    this.timeUpdated = data.timeUpdated ? new Date(data.timeUpdated) : new DataTransfer()
+    this.timeUpdated = data.timeUpdated ? new Date(data.timeUpdated) : new Date()
     this.body = data.body || ''
   }
   
