@@ -19,11 +19,13 @@ class ObservableAppState extends EventEmitter {
 
   /**@type {Note | null} */
   activeNote = null
-  //   new MainImage({
-  //   source: 'assets/img/typewritter_unDraw.svg',  
-  //   title:'You have not selected a note yet.', 
-  //   alt: 'typewritter - a space to jot down notes'
-  // })
+  
+  /**@type {MainImage} */
+  mainImage = new MainImage({
+    source: 'assets/img/typewritter_unDraw.svg',  
+    title:'You have not selected a note yet.', 
+    alt: 'typewritter - a space to jot down notes'
+  })
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

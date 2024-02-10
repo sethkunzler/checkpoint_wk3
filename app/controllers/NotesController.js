@@ -19,8 +19,14 @@ function _drawActiveNote() {
   // console.log("draw active note function called") // works!
   
   const activeNote = AppState.activeNote
-  
-  setHTML('activeNote', activeNote.ActiveNoteHTMLTemplate)
+  const mainImage = AppState.mainImage
+
+  if (!activeNote) {
+    setHTML('activeNote', mainImage.mainImageTemplate)
+    return
+  } else {
+    setHTML('activeNote', activeNote.ActiveNoteHTMLTemplate)
+  }
 }
 
 
@@ -53,6 +59,11 @@ export class NotesController {
       return
     }
     notesService.removeNote(noteId)
+    this.resetActiveNote()
+  }
+
+  resetActiveNote() {
+    notesService.resetActiveNote()
   }
 
 

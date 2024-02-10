@@ -20,24 +20,26 @@ export class Note {
 
 get ActiveNoteHTMLTemplate() {
   return /*html*/ `
-  <section class="container">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-between p-4">
-              <h1>Title:<span class="${this.color}"> ${this.name} </span></h1>
-              <button type="button" class="btn btn-danger shadow px-3">x</button>
-            </div>  
-            <div class="col-4 p-4">
-              <p>Created at: ${this.timeCreated}</p>
-              <p>Updated at: ${this.timeUpdated}</p>
-              <p>Words: 0; Characters: 0</p>
-              <button type="button" class="btn btn-outline-danger shadow">Delete</button>
-              <button type="button" class="btn btn-success shadow mx-3">Save</button>
-            </div>
-            <div class="col-md-8">
-              <textarea class="m-4 p-3 bg-gray-light rounded shadow" name="body" id="noteInformation" cols="50" rows="15"></textarea> 
-            </div>
-          </div>
-        </section>
+  <div class="bg-purple-light gray-light rounded shadow m-3">
+    <section class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between p-4">
+          <h1>Title:<span class="${this.color}"> ${this.name} </span></h1>
+          <button onclick="app.NotesController.resetActiveNote()" type="button" class="btn btn-danger shadow px-3">x</button>
+        </div>  
+        <div class="col-4 p-4">
+          <p>Created at: ${this.timeCreated}</p>
+          <p>Updated at: ${this.timeUpdated}</p>
+          <p>Words: 0; Characters: 0</p>
+          <button onclick="app.NotesController.removeNote('${this.id}')" type="button" class="btn btn-outline-danger shadow">Delete</button>
+          <button type="button" class="btn btn-success shadow mx-3">Save</button>
+        </div>
+        <div class="col-md-8">
+          <textarea class="m-4 p-3 bg-gray-light rounded shadow" name="body" id="noteInformation" cols="50" rows="15"></textarea> 
+        </div>
+      </div>
+    </section>
+  </div>
   `
 }
 }
