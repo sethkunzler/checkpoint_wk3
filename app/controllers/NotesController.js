@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js"
 import { notesService } from "../services/NotesService.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 function _drawNotesList() {
@@ -38,12 +39,20 @@ export class NotesController {
     notesService.setActiveNote(noteId)
   }
 
-  createNewNote(data) {
+  createNewNote() {
     event.preventDefault()
     console.log('creating a new note')
     const form = event.target
     const noteFormData = getFormData(form)
     notesService.createNewNote(noteFormData)
+  }
+
+  async removeNote(noteId) {
+    const wantsToRemove = await Pop.confirm('Are you sure you want to delete this note?')
+    if(!wantsToRemove) {
+      return
+    }
+    notesService.removeNote(noteId)
   }
 
 
