@@ -1,4 +1,5 @@
 import { NotesController } from "./controllers/NotesController.js";
+import { notesService } from "./services/NotesService.js";
 import { Router } from "./utils/Router.js";
 
 

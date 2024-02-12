@@ -13,7 +13,7 @@ function _loadNotes() {
 class NotesService {
   
   constructor() {
-    _loadNotes
+    _loadNotes()
   }
   
   setActiveNote(noteId){
