@@ -16,7 +16,7 @@ export class Note {
   get NoteListHTMLTemplate() {
     return /*html*/ `
   <p id="${this.id}" 
-  onclick="app.NotesController.setActiveNote('${this.id}'), this.activeNoteStatus()" 
+  onclick="app.NotesController.setActiveNote('${this.id}')" 
   class="selectable rounded p-2 ${this.color}" 
   role="button">${this.name}</p>
   `
@@ -29,13 +29,13 @@ get ActiveNoteHTMLTemplate() {
       <div class="row">
         <div class="col-12 d-flex justify-content-between p-4">
           <div id="activeNoteTitle">
-            <!-- STUB this section has been stubbed out -->
-            <!-- FIXME the text editor and the color selector do not pop up -->
-            <h1>Title: 
+            <!-- STUB this section has been stubbed out title, or a color picker-->
+            ${this.activeNoteStatus}
+            <!-- <h1>Title: 
               <span onclick="app.NotesController.editActiveNoteTitle()" class="selectable rounded px-2">
                 <span class="${this.color}">${this.name}</span> <i class="fs-6 mdi mdi-pencil"></i>
               </span>
-            </h1>
+            </h1> -->
           </div>
           <button onclick="app.NotesController.resetActiveNote()" type="button" class="btn btn-danger shadow px-3">x</button>
         </div>  
@@ -59,7 +59,7 @@ get activeNoteStatus() {
   if (this.titleIsEditable) {
     return this.titleEditor
   }
-  else {return this.activeNoteStatus}
+  else {return this.activeNoteTitle}
 }
 
 get activeNoteTitle() {
@@ -74,9 +74,12 @@ get activeNoteTitle() {
 get titleEditor() {
   return /*html*/ `
     <form action="">
-    <textarea id="activeNoteTextarea" class="m-4 p-3 bg-gray-light rounded shadow" name="body" id="noteInformation" cols="20" rows="1" width="25" minlength="3" maxlength="15">${this.body}</textarea> 
-    <div class="form-floating mb-3">
-      <select class="form-select" id="color" aria-label="Floating label select example" name="color" required>
+    <input id="activeNoteTextarea" class="m-4 p-3 bg-gray-light rounded shadow" name="name" id="noteInformation" minlength="3" maxlength="15">
+    <label for="name">${this.name}</label>
+    <div class="">
+      <label for="color">
+      </label>
+      <select class="" id="color" aria-label="select" name="color" required>
         <option disabled selected value="">Choose a Color</option>
         <option value="">Random Color</option>
         <option value="yellow">yellow</option>
@@ -87,7 +90,6 @@ get titleEditor() {
         <option value="orange-red">red orange</option>
         <option value="orange-dark">burnt orange</option>
       </select>
-      <label for="color">Color</label>
     </div>
     <button onclick="app.NotesController.updateActiveNoteTitle()" type="submit">Done</button>
     </form>

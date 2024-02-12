@@ -65,7 +65,6 @@ class NotesService {
     AppState.notes.splice(notesIndex, 1)
   
     _saveNotes()
-    // TODO make sure to add the reset active note as well 
   }
 
   resetActiveNote() {

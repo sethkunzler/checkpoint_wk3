@@ -1,7 +1,7 @@
 checkpoint_wk3
-<!-- TODO I need to make sure that it saves to local data -->
-<!-- TODO Check to make sure I have completed all of the requirements for this checkpoint -->
+<!-- FIXME Form elements that are not the "add note form" are throwing error messages. improperly setup -->
 <!-- TODO I need to figure out why keep getting errors about form element tags being incorrectly labeled when I press the 'delete' button on my active note element. it probably has something to do with the windows pop up sweet alert messages.-->
+<!-- TODO add an off canvas menu -->
 <!-- TODO check to make sure I have finished all of the TODO's through out the application -->
 
 hours spent on the application  - 11 working hrs to date 
