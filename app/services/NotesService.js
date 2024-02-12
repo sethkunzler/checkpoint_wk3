@@ -15,7 +15,7 @@ class NotesService {
   constructor() {
     _loadNotes
   }
-
+  
   setActiveNote(noteId){
     // console.log('received a set active note request from the controller for', noteId)
     
@@ -24,7 +24,21 @@ class NotesService {
     // Sets the Active Note to the Found Note with the matching ID
     AppState.activeNote = foundNote
   }
+  
+  editActiveNoteTitle() {
+    const activeNote = AppState.activeNote
+    activeNote.titleIsEditable = true
+    AppState.emit('activeNote')
+  }
+  updateActiveNoteTitle(updatedNoteTitle) {
+    const activeNote = AppState.activeNote
 
+    activeNote.name = updatedNoteTitle
+    activeNote.timeUpdated = new Date()
+    activeNote.titleIsEditable = false
+    _saveNotes
+    AppState.emit('activeNote')
+  }
   updateActiveNote(updatedNoteBody) {
     const activeNote = AppState.activeNote
 

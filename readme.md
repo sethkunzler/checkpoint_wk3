@@ -1,14 +1,10 @@
 checkpoint_wk3
-<!-- TODO add the update on mouse leave like the model does, and add the auto update, and just have the Save button update the timestamp on the screen.  -->
-<!-- TODO I also Need to add the Save button feature.   -->
-<!-- TODO I need to make the X button clear the active note. -->
-<!-- TODO I need to be able to type words to the text box and have them save to the body property of the note object. -->
 <!-- TODO I need to make sure that it saves to local data -->
 <!-- TODO Check to make sure I have completed all of the requirements for this checkpoint -->
 <!-- TODO I need to figure out why keep getting errors about form element tags being incorrectly labeled when I press the 'delete' button on my active note element. it probably has something to do with the windows pop up sweet alert messages.-->
 <!-- TODO check to make sure I have finished all of the TODO's through out the application -->
 
-hours spent on the application  - 9 working hrs to date 
+hours spent on the application  - 11 working hrs to date 
 
 ============
 

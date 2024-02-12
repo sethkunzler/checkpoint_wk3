@@ -10,9 +10,11 @@ function _drawNotesList() {
   
   const notesList = AppState.notes
   let htmlString = ''
-  
+  let htmlCount = notesList.length
+
   notesList.forEach(note => htmlString += note.NoteListHTMLTemplate)
 
+  setHTML('notesListCounter', htmlCount)
   setHTML('notesList', htmlString)
 }
 
@@ -46,10 +48,19 @@ export class NotesController {
     // console.log('setting active note') // works!
     notesService.setActiveNote(noteId)
   }
+
   editActiveNoteTitle() {
     console.log("editing active note title")
+    notesService.editActiveNoteTitle()
   }
 
+  updateActiveNoteTitle() {
+    const titleElem = document.getElementById('activeNoteTitle')
+
+    // @ts-ignore 
+    const updatedNoteTitle = titleElem.value
+    notesService.updateActiveNoteTitle(updatedNoteTitle)
+  }
   updateActiveNote() {
     const textareaElem = document.getElementById('activeNoteTextarea')
 
