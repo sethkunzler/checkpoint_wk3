@@ -1,18 +1,27 @@
 export function generateColor() {
-  const randomNumber = Math.ceil(Math.random()*4)
+  const randomNumber = Math.ceil(Math.random()*7)
   let color = ''
   switch (randomNumber) {
     // yellow #FFF504
     case 1: color = 'yellow'
     break;
-    // pink #FF42CA
-    case 2: color = 'pink'
+    // pink-light #FF42CA
+    case 2: color = 'pink-light'
     break;
-    // bright orange #FFAA04
-    case 3: color = 'orange-light'
+    // pink-dark #D642FF
+    case 3: color = 'pink-dark'
     break;
-    // dark orange #CC6254
-    case 4: color = 'orange-dark'
+    // green #8CFF04
+    case 4: color = 'green'
+    break;
+    // orange-light #FFAA04
+    case 5: color = 'orange-light'
+    break;
+    // orange-red #FF426B
+    case 6: color = 'orange-red'
+    break;
+    // orange-dark #CC6254
+    case 7: color = 'orange-dark'
     break;
   }
   return color

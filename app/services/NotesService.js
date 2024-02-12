@@ -1,9 +1,21 @@
 import { AppState } from "../AppState.js"
 import { Note } from "../models/Note.js"
+import { loadState, saveState } from "../utils/Store.js"
+
+
+function _saveNotes() {
+  saveState('notes', AppState.notes)
+}
+function _loadNotes() {
+  AppState.notes = loadState('notes', [Note])
+}
 
 class NotesService {
   
-  
+  constructor() {
+    _loadNotes
+  }
+
   setActiveNote(noteId){
     // console.log('received a set active note request from the controller for', noteId)
     
@@ -12,10 +24,20 @@ class NotesService {
     // Sets the Active Note to the Found Note with the matching ID
     AppState.activeNote = foundNote
   }
+
+  updateActiveNote(updatedNoteBody) {
+    const activeNote = AppState.activeNote
+
+    activeNote.body = updatedNoteBody
+    activeNote.timeUpdated = new Date()
+    _saveNotes
+    AppState.emit('activeNote')
+  }
   
   createNewNote(noteFormData) {
     const newNote = new Note(noteFormData)
     AppState.notes.push(newNote)
+    _saveNotes()
   }
 
   removeNote(noteId) {
@@ -27,7 +49,8 @@ class NotesService {
     }
 
     AppState.notes.splice(notesIndex, 1)
-
+  
+    _saveNotes()
     // TODO make sure to add the reset active note as well 
   }
 

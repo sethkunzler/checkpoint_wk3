@@ -4,7 +4,6 @@ import { notesService } from "../services/NotesService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
-import { loadState, saveState } from "../utils/Store.js"
 
 function _drawNotesList() {
   // console.log('draw notes list function called') // works!
@@ -31,12 +30,7 @@ function _drawActiveNote() {
   }
 }
 
-function _saveNotes() {
-  saveState('notes', AppState.notes)
-}
-function _loadNotes() {
-  AppState.notes = loadState('notes', [Note])
-}
+
 
 export class NotesController {
   constructor() {
@@ -52,6 +46,17 @@ export class NotesController {
     // console.log('setting active note') // works!
     notesService.setActiveNote(noteId)
   }
+  editActiveNoteTitle() {
+    console.log("editing active note title")
+  }
+
+  updateActiveNote() {
+    const textareaElem = document.getElementById('activeNoteTextarea')
+
+    // @ts-ignore 
+    const updatedNoteBody = textareaElem.value
+    notesService.updateActiveNote(updatedNoteBody)
+  }
 
   createNewNote() {
     event.preventDefault()
@@ -59,7 +64,6 @@ export class NotesController {
     const form = event.target
     const noteFormData = getFormData(form)
     notesService.createNewNote(noteFormData)
-    _saveNotes()
   }
 
   async removeNote(noteId) {
@@ -74,7 +78,6 @@ export class NotesController {
     } else {
       notesService.removeNote(noteId)
     // FIXME ^^ The problem is here between the two FIXMEs
-      _saveNotes()
       this.resetActiveNote()
     }
   }

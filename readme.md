@@ -8,7 +8,7 @@ checkpoint_wk3
 <!-- TODO I need to figure out why keep getting errors about form element tags being incorrectly labeled when I press the 'delete' button on my active note element. it probably has something to do with the windows pop up sweet alert messages.-->
 <!-- TODO check to make sure I have finished all of the TODO's through out the application -->
 
-hours spent on the application  - 8 working hrs to date 
+hours spent on the application  - 9 working hrs to date 
 
 ============
 

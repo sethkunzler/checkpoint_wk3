@@ -5,9 +5,12 @@
   --gray-dark: #9A8C98;
   --gray-light: #F2E9E4;
   --orange-dark: #CC6254;
+  --orange-red: #FF426B;
   --orange-light: #FFAA04;
-  --pink: #FF42CA;
+  --pink-light: #FF42CA;
+  --pink-dark:#D642FF;
   --yellow: #FFF504;
+  --green: #8CFF04;
 }
 
 /* BASIC STYLES HERE */
@@ -29,14 +32,23 @@
 .orange-dark {
   color: var(--orange-dark)
 }
+.orange-red {
+  color: var(--orange-red)
+}
 .orange-light {
   color: var(--orange-light)
 }
-.pink {
-  color: var(--pink)
+.pink-light {
+  color: var(--pink-light)
+}
+.pink-dark {
+  color: var(--pink-dark)
 }
 .yellow {
   color: var(--yellow)
+}
+.green {
+  color: var(--green)
 }
 .bg-purple-dark {
   background-color: var(--purple-dark)
@@ -53,14 +65,23 @@
 .bg-orange-dark {
   background-color: var(--orange-dark)
 }
+.bg-orange-red {
+  background-color: var(--orange-red)
+}
 .bg-orange-light {
   background-color: var(--orange-light)
 }
-.bg-pink {
-  background-color: var(--pink)
+.bg-pink-light {
+  background-color: var(--pink-light)
+}
+.bg-pink-dark {
+  background-color: var(--pink-dark)
 }
 .bg-yellow {
   background-color: var(--yellow)
+}
+.bg-green {
+  background-color: var(--green)
 }
 /* #endregion */
 
