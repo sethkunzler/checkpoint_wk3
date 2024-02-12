@@ -1,11 +1,5 @@
 import { AppState } from "../AppState.js"
-import { MainImage } from "../models/MainImage.js"
 import { Note } from "../models/Note.js"
-import { loadState, saveState } from "../utils/Store.js"
-
-function _saveNotes() {
-  saveState('notes', AppState.notes)
-}
 
 class NotesService {
   
@@ -22,8 +16,6 @@ class NotesService {
   createNewNote(noteFormData) {
     const newNote = new Note(noteFormData)
     AppState.notes.push(newNote)
-    
-    _saveNotes()
   }
 
   removeNote(noteId) {
@@ -36,7 +28,6 @@ class NotesService {
 
     AppState.notes.splice(notesIndex, 1)
 
-    _saveNotes()
     // TODO make sure to add the reset active note as well 
   }
 
